@@ -90,6 +90,9 @@
     <Compile Include="AdaugareAngajat.Designer.cs">
       <DependentUpon>AdaugareAngajat.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,13 +104,50 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormActualizareAngajat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActualizareAngajat.Designer.cs">
+      <DependentUpon>FormActualizareAngajat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModificareParola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificareParola.Designer.cs">
+      <DependentUpon>FormModificareParola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModificareProcente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificareProcente.Designer.cs">
+      <DependentUpon>FormModificareProcente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParolaProcente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParolaProcente.Designer.cs">
+      <DependentUpon>FormParolaProcente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="AdaugareAngajat.resx">
       <DependentUpon>AdaugareAngajat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormActualizareAngajat.resx">
+      <DependentUpon>FormActualizareAngajat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificareParola.resx">
+      <DependentUpon>FormModificareParola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificareProcente.resx">
+      <DependentUpon>FormModificareProcente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParolaProcente.resx">
+      <DependentUpon>FormParolaProcente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

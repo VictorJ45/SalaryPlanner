@@ -322,6 +322,8 @@ namespace Proiect {
             
             private global::System.Data.DataColumn columnIMPOZIT_PROC;
             
+            private global::System.Data.DataColumn columnPAROLA_CRIPTATA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PROCENTAJEDataTable() {
@@ -389,6 +391,14 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PAROLA_CRIPTATAColumn {
+                get {
+                    return this.columnPAROLA_CRIPTATA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -424,13 +434,14 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PROCENTAJERow AddPROCENTAJERow(decimal ID, decimal CAS_PROC, decimal CASS_PROC, decimal IMPOZIT_PROC) {
+            public PROCENTAJERow AddPROCENTAJERow(decimal ID, decimal CAS_PROC, decimal CASS_PROC, decimal IMPOZIT_PROC, string PAROLA_CRIPTATA) {
                 PROCENTAJERow rowPROCENTAJERow = ((PROCENTAJERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         CAS_PROC,
                         CASS_PROC,
-                        IMPOZIT_PROC};
+                        IMPOZIT_PROC,
+                        PAROLA_CRIPTATA};
                 rowPROCENTAJERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROCENTAJERow);
                 return rowPROCENTAJERow;
@@ -464,6 +475,7 @@ namespace Proiect {
                 this.columnCAS_PROC = base.Columns["CAS_PROC"];
                 this.columnCASS_PROC = base.Columns["CASS_PROC"];
                 this.columnIMPOZIT_PROC = base.Columns["IMPOZIT_PROC"];
+                this.columnPAROLA_CRIPTATA = base.Columns["PAROLA_CRIPTATA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,10 +489,13 @@ namespace Proiect {
                 base.Columns.Add(this.columnCASS_PROC);
                 this.columnIMPOZIT_PROC = new global::System.Data.DataColumn("IMPOZIT_PROC", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIMPOZIT_PROC);
+                this.columnPAROLA_CRIPTATA = new global::System.Data.DataColumn("PAROLA_CRIPTATA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAROLA_CRIPTATA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnPAROLA_CRIPTATA.MaxLength = 256;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1131,6 +1146,22 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PAROLA_CRIPTATA {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROCENTAJE.PAROLA_CRIPTATAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAROLA_CRIPTATA\' in table \'PROCENTAJE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROCENTAJE.PAROLA_CRIPTATAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCAS_PROCNull() {
                 return this.IsNull(this.tablePROCENTAJE.CAS_PROCColumn);
             }
@@ -1163,6 +1194,18 @@ namespace Proiect {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetIMPOZIT_PROCNull() {
                 this[this.tablePROCENTAJE.IMPOZIT_PROCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPAROLA_CRIPTATANull() {
+                return this.IsNull(this.tablePROCENTAJE.PAROLA_CRIPTATAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPAROLA_CRIPTATANull() {
+                this[this.tablePROCENTAJE.PAROLA_CRIPTATAColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1702,10 +1745,11 @@ namespace Proiect.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("CAS_PROC", "CAS_PROC");
             tableMapping.ColumnMappings.Add("CASS_PROC", "CASS_PROC");
             tableMapping.ColumnMappings.Add("IMPOZIT_PROC", "IMPOZIT_PROC");
+            tableMapping.ColumnMappings.Add("PAROLA_CRIPTATA", "PAROLA_CRIPTATA");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""PROCENTAJE"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_CAS_PROC = 1 AND ""CAS_PROC"" IS NULL) OR (""CAS_PROC"" = :Original_CAS_PROC)) AND ((:IsNull_CASS_PROC = 1 AND ""CASS_PROC"" IS NULL) OR (""CASS_PROC"" = :Original_CASS_PROC)) AND ((:IsNull_IMPOZIT_PROC = 1 AND ""IMPOZIT_PROC"" IS NULL) OR (""IMPOZIT_PROC"" = :Original_IMPOZIT_PROC)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""PROCENTAJE"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_CAS_PROC = 1 AND ""CAS_PROC"" IS NULL) OR (""CAS_PROC"" = :Original_CAS_PROC)) AND ((:IsNull_CASS_PROC = 1 AND ""CASS_PROC"" IS NULL) OR (""CASS_PROC"" = :Original_CASS_PROC)) AND ((:IsNull_IMPOZIT_PROC = 1 AND ""IMPOZIT_PROC"" IS NULL) OR (""IMPOZIT_PROC"" = :Original_IMPOZIT_PROC)) AND ((:IsNull_PAROLA_CRIPTATA = 1 AND ""PAROLA_CRIPTATA"" IS NULL) OR (""PAROLA_CRIPTATA"" = :Original_PAROLA_CRIPTATA)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ID";
@@ -1773,10 +1817,28 @@ namespace Proiect.DataSet1TableAdapters {
             param.SourceColumn = "IMPOZIT_PROC";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAROLA_CRIPTATA";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAROLA_CRIPTATA";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"PROCENTAJE\" (\"ID\", \"CAS_PROC\", \"CASS_PROC\", \"IMPOZIT_PROC\") VALUES (" +
-                ":ID, :CAS_PROC, :CASS_PROC, :IMPOZIT_PROC)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"PROCENTAJE\" (\"ID\", \"CAS_PROC\", \"CASS_PROC\", \"IMPOZIT_PROC\", \"PAROLA_" +
+                "CRIPTATA\") VALUES (:ID, :CAS_PROC, :CASS_PROC, :IMPOZIT_PROC, :PAROLA_CRIPTATA)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ID";
@@ -1810,9 +1872,16 @@ namespace Proiect.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "IMPOZIT_PROC";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAROLA_CRIPTATA";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""PROCENTAJE"" SET ""ID"" = :ID, ""CAS_PROC"" = :CAS_PROC, ""CASS_PROC"" = :CASS_PROC, ""IMPOZIT_PROC"" = :IMPOZIT_PROC WHERE ((""ID"" = :Original_ID) AND ((:IsNull_CAS_PROC = 1 AND ""CAS_PROC"" IS NULL) OR (""CAS_PROC"" = :Original_CAS_PROC)) AND ((:IsNull_CASS_PROC = 1 AND ""CASS_PROC"" IS NULL) OR (""CASS_PROC"" = :Original_CASS_PROC)) AND ((:IsNull_IMPOZIT_PROC = 1 AND ""IMPOZIT_PROC"" IS NULL) OR (""IMPOZIT_PROC"" = :Original_IMPOZIT_PROC)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""PROCENTAJE"" SET ""ID"" = :ID, ""CAS_PROC"" = :CAS_PROC, ""CASS_PROC"" = :CASS_PROC, ""IMPOZIT_PROC"" = :IMPOZIT_PROC, ""PAROLA_CRIPTATA"" = :PAROLA_CRIPTATA WHERE ((""ID"" = :Original_ID) AND ((:IsNull_CAS_PROC = 1 AND ""CAS_PROC"" IS NULL) OR (""CAS_PROC"" = :Original_CAS_PROC)) AND ((:IsNull_CASS_PROC = 1 AND ""CASS_PROC"" IS NULL) OR (""CASS_PROC"" = :Original_CASS_PROC)) AND ((:IsNull_IMPOZIT_PROC = 1 AND ""IMPOZIT_PROC"" IS NULL) OR (""IMPOZIT_PROC"" = :Original_IMPOZIT_PROC)) AND ((:IsNull_PAROLA_CRIPTATA = 1 AND ""PAROLA_CRIPTATA"" IS NULL) OR (""PAROLA_CRIPTATA"" = :Original_PAROLA_CRIPTATA)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ID";
@@ -1845,6 +1914,13 @@ namespace Proiect.DataSet1TableAdapters {
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "IMPOZIT_PROC";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAROLA_CRIPTATA";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ID";
@@ -1912,6 +1988,24 @@ namespace Proiect.DataSet1TableAdapters {
             param.SourceColumn = "IMPOZIT_PROC";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAROLA_CRIPTATA";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAROLA_CRIPTATA";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 256;
+            param.IsNullable = true;
+            param.SourceColumn = "PAROLA_CRIPTATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1927,7 +2021,7 @@ namespace Proiect.DataSet1TableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, CAS_Proc, CASS_Proc, Impozit_Proc\r\nFROM Procentaje";
+            this._commandCollection[0].CommandText = "SELECT Id, CAS_Proc, CASS_Proc, Impozit_Proc, Parola_Criptata\r\nFROM Procentaje";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1988,7 +2082,7 @@ namespace Proiect.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC) {
+        public virtual int Delete(decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC, string Original_PAROLA_CRIPTATA) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             if ((Original_CAS_PROC.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -2014,6 +2108,13 @@ namespace Proiect.DataSet1TableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_PAROLA_CRIPTATA == null)) {
+                throw new global::System.ArgumentNullException("Original_PAROLA_CRIPTATA");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PAROLA_CRIPTATA));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2034,7 +2135,7 @@ namespace Proiect.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ID, global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC) {
+        public virtual int Insert(decimal ID, global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC, string PAROLA_CRIPTATA) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID));
             if ((CAS_PROC.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(CAS_PROC.Value));
@@ -2053,6 +2154,12 @@ namespace Proiect.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((PAROLA_CRIPTATA == null)) {
+                throw new global::System.ArgumentNullException("PAROLA_CRIPTATA");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PAROLA_CRIPTATA));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2074,7 +2181,7 @@ namespace Proiect.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID, global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC, decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC) {
+        public virtual int Update(decimal ID, global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC, string PAROLA_CRIPTATA, decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC, string Original_PAROLA_CRIPTATA) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID));
             if ((CAS_PROC.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(CAS_PROC.Value));
@@ -2094,30 +2201,43 @@ namespace Proiect.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID));
-            if ((Original_CAS_PROC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_CAS_PROC.Value));
+            if ((PAROLA_CRIPTATA == null)) {
+                throw new global::System.ArgumentNullException("PAROLA_CRIPTATA");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PAROLA_CRIPTATA));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ID));
+            if ((Original_CAS_PROC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_CAS_PROC.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_CASS_PROC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_CASS_PROC.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_CASS_PROC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_IMPOZIT_PROC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_IMPOZIT_PROC.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_IMPOZIT_PROC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PAROLA_CRIPTATA == null)) {
+                throw new global::System.ArgumentNullException("Original_PAROLA_CRIPTATA");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PAROLA_CRIPTATA));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2139,8 +2259,8 @@ namespace Proiect.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC, decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC) {
-            return this.Update(Original_ID, CAS_PROC, CASS_PROC, IMPOZIT_PROC, Original_ID, Original_CAS_PROC, Original_CASS_PROC, Original_IMPOZIT_PROC);
+        public virtual int Update(global::System.Nullable<decimal> CAS_PROC, global::System.Nullable<decimal> CASS_PROC, global::System.Nullable<decimal> IMPOZIT_PROC, string PAROLA_CRIPTATA, decimal Original_ID, global::System.Nullable<decimal> Original_CAS_PROC, global::System.Nullable<decimal> Original_CASS_PROC, global::System.Nullable<decimal> Original_IMPOZIT_PROC, string Original_PAROLA_CRIPTATA) {
+            return this.Update(Original_ID, CAS_PROC, CASS_PROC, IMPOZIT_PROC, PAROLA_CRIPTATA, Original_ID, Original_CAS_PROC, Original_CASS_PROC, Original_IMPOZIT_PROC, Original_PAROLA_CRIPTATA);
         }
     }
     

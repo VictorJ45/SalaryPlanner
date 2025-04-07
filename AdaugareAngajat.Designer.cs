@@ -43,63 +43,76 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.anulare = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNume
             // 
-            this.txtNume.Location = new System.Drawing.Point(80, 33);
+            this.txtNume.Location = new System.Drawing.Point(160, 63);
+            this.txtNume.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtNume.Name = "txtNume";
-            this.txtNume.Size = new System.Drawing.Size(100, 20);
+            this.txtNume.Size = new System.Drawing.Size(196, 31);
             this.txtNume.TabIndex = 0;
             // 
             // txtPrenume
             // 
-            this.txtPrenume.Location = new System.Drawing.Point(80, 74);
+            this.txtPrenume.Location = new System.Drawing.Point(160, 142);
+            this.txtPrenume.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPrenume.Name = "txtPrenume";
-            this.txtPrenume.Size = new System.Drawing.Size(100, 20);
+            this.txtPrenume.Size = new System.Drawing.Size(196, 31);
             this.txtPrenume.TabIndex = 1;
             // 
             // txtFunctie
             // 
-            this.txtFunctie.Location = new System.Drawing.Point(80, 117);
+            this.txtFunctie.Location = new System.Drawing.Point(160, 225);
+            this.txtFunctie.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFunctie.Name = "txtFunctie";
-            this.txtFunctie.Size = new System.Drawing.Size(100, 20);
+            this.txtFunctie.Size = new System.Drawing.Size(196, 31);
             this.txtFunctie.TabIndex = 2;
             // 
             // txtRetineri
             // 
-            this.txtRetineri.Location = new System.Drawing.Point(179, 158);
+            this.txtRetineri.Location = new System.Drawing.Point(358, 304);
+            this.txtRetineri.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtRetineri.Name = "txtRetineri";
-            this.txtRetineri.Size = new System.Drawing.Size(100, 20);
+            this.txtRetineri.Size = new System.Drawing.Size(196, 31);
             this.txtRetineri.TabIndex = 3;
+            this.txtRetineri.Text = "0";
             this.txtRetineri.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtSporProc
             // 
-            this.txtSporProc.Location = new System.Drawing.Point(283, 74);
+            this.txtSporProc.Location = new System.Drawing.Point(566, 142);
+            this.txtSporProc.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSporProc.Name = "txtSporProc";
-            this.txtSporProc.Size = new System.Drawing.Size(100, 20);
+            this.txtSporProc.Size = new System.Drawing.Size(196, 31);
             this.txtSporProc.TabIndex = 4;
+            this.txtSporProc.Text = "0";
             // 
             // txtSalarBaza
             // 
-            this.txtSalarBaza.Location = new System.Drawing.Point(283, 33);
+            this.txtSalarBaza.Location = new System.Drawing.Point(566, 63);
+            this.txtSalarBaza.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSalarBaza.Name = "txtSalarBaza";
-            this.txtSalarBaza.Size = new System.Drawing.Size(100, 20);
+            this.txtSalarBaza.Size = new System.Drawing.Size(196, 31);
             this.txtSalarBaza.TabIndex = 5;
             // 
             // txtPremiiBrute
             // 
-            this.txtPremiiBrute.Location = new System.Drawing.Point(283, 117);
+            this.txtPremiiBrute.Location = new System.Drawing.Point(566, 225);
+            this.txtPremiiBrute.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPremiiBrute.Name = "txtPremiiBrute";
-            this.txtPremiiBrute.Size = new System.Drawing.Size(100, 20);
+            this.txtPremiiBrute.Size = new System.Drawing.Size(196, 31);
             this.txtPremiiBrute.TabIndex = 6;
+            this.txtPremiiBrute.Text = "0";
+            this.txtPremiiBrute.TextChanged += new System.EventHandler(this.txtPremiiBrute_TextChanged);
             // 
             // btnSalveaza
             // 
-            this.btnSalveaza.Location = new System.Drawing.Point(193, 206);
+            this.btnSalveaza.Location = new System.Drawing.Point(272, 396);
+            this.btnSalveaza.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSalveaza.Name = "btnSalveaza";
-            this.btnSalveaza.Size = new System.Drawing.Size(75, 23);
+            this.btnSalveaza.Size = new System.Drawing.Size(150, 44);
             this.btnSalveaza.TabIndex = 7;
             this.btnSalveaza.Text = "Salveaza";
             this.btnSalveaza.UseVisualStyleBackColor = true;
@@ -108,9 +121,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 36);
+            this.label1.Location = new System.Drawing.Point(78, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nume";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -118,36 +132,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 77);
+            this.label2.Location = new System.Drawing.Point(50, 148);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "Prenume";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 120);
+            this.label3.Location = new System.Drawing.Point(64, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Functie";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(216, 36);
+            this.label4.Location = new System.Drawing.Point(432, 69);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.Size = new System.Drawing.Size(124, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "Salariu Brut";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(198, 77);
+            this.label5.Location = new System.Drawing.Point(396, 148);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.Size = new System.Drawing.Size(160, 25);
             this.label5.TabIndex = 12;
             this.label5.Text = "Spor(procentaj)";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -155,26 +173,39 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(214, 120);
+            this.label6.Location = new System.Drawing.Point(428, 231);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(129, 25);
             this.label6.TabIndex = 13;
             this.label6.Text = "Premii Brute";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(138, 161);
+            this.label7.Location = new System.Drawing.Point(276, 310);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(86, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Retineri";
             // 
+            // anulare
+            // 
+            this.anulare.Location = new System.Drawing.Point(502, 396);
+            this.anulare.Name = "anulare";
+            this.anulare.Size = new System.Drawing.Size(170, 44);
+            this.anulare.TabIndex = 15;
+            this.anulare.Text = "Anuleaza";
+            this.anulare.UseVisualStyleBackColor = true;
+            this.anulare.Click += new System.EventHandler(this.anulare_Click);
+            // 
             // AdaugareAngajat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.anulare);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -190,6 +221,7 @@
             this.Controls.Add(this.txtFunctie);
             this.Controls.Add(this.txtPrenume);
             this.Controls.Add(this.txtNume);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "AdaugareAngajat";
             this.Text = "AdaugareAngajat";
             this.ResumeLayout(false);
@@ -214,5 +246,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button anulare;
     }
 }

@@ -60,6 +60,17 @@ namespace Proiect
         {
 
         }
+
+        private void txtPremiiBrute_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anulare_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
 

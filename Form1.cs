@@ -19,12 +19,10 @@ namespace Proiect
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.PROCENTAJE' table. You can move, or remove it, as needed.
             this.pROCENTAJETableAdapter.Fill(this.dataSet1.PROCENTAJE);
-            // TODO: This line of code loads data into the 'dataSet1.ANGAJATI' table. You can move, or remove it, as needed.
             this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI);
-            // TODO: This line of code loads data into the 'dataSet1.ANGAJATI' table. You can move, or remove it, as needed.
             this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI);
+            dataGridView1.ReadOnly = true;
 
         }
 
@@ -39,7 +37,6 @@ namespace Proiect
 
             if (f.ShowDialog() == DialogResult.OK)
             {
-                // Inserare în baza de date cu valorile din popup
                 try
                 {
                     this.aNGAJATITableAdapter.Insert(
@@ -50,17 +47,55 @@ namespace Proiect
                         f.SporProc,
                         f.Premii,
                         f.Retineri,
-                        0, 0, 0, 0, 0, 0 // se vor calcula în trigger
+                        0, 0, 0, 0, 0, 0 
                     );
 
                     MessageBox.Show("Angajat adăugat cu succes!");
-                    this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI); // reîncărcare tabel
+                    this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Eroare la inserare: " + ex.Message);
                 }
             }
+        }
+
+        private void btnSchimbaParola_Click(object sender, EventArgs e)
+        {
+            var f = new FormModificareParola(this.dataSet1, this.pROCENTAJETableAdapter);
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                this.pROCENTAJETableAdapter.Fill(this.dataSet1.PROCENTAJE); 
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnModificaProcente_Click(object sender, EventArgs e)
+        {
+            var fParola = new FormParolaProcente(this.dataSet1, this.pROCENTAJETableAdapter);
+            if (fParola.ShowDialog() == DialogResult.OK && fParola.Autorizat)
+            {
+                var fProcente = new FormModificareProcente(this.dataSet1, this.pROCENTAJETableAdapter);
+                if (fProcente.ShowDialog() == DialogResult.OK)
+                {
+                    this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Parola greșită. Acces refuzat.");
+            }
+        }
+
+        private void btnActualizare_Click(object sender, EventArgs e)
+        {
+            var f = new FormActualizareAngajat(this.dataSet1, this.aNGAJATITableAdapter);
+            f.ShowDialog();
+            this.aNGAJATITableAdapter.Fill(this.dataSet1.ANGAJATI);
         }
     }
 }
