@@ -44,6 +44,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.anulare = new System.Windows.Forms.Button();
+            this.picAngajat = new System.Windows.Forms.PictureBox();
+            this.btnIncarcaPoza = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picAngajat)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNume
@@ -162,7 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(396, 148);
+            this.label5.Location = new System.Drawing.Point(397, 148);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 25);
@@ -200,11 +203,32 @@
             this.anulare.UseVisualStyleBackColor = true;
             this.anulare.Click += new System.EventHandler(this.anulare_Click);
             // 
+            // picAngajat
+            // 
+            this.picAngajat.Location = new System.Drawing.Point(872, 63);
+            this.picAngajat.Name = "picAngajat";
+            this.picAngajat.Size = new System.Drawing.Size(305, 214);
+            this.picAngajat.TabIndex = 16;
+            this.picAngajat.TabStop = false;
+            this.picAngajat.Click += new System.EventHandler(this.picAngajat_Click);
+            // 
+            // btnIncarcaPoza
+            // 
+            this.btnIncarcaPoza.Location = new System.Drawing.Point(933, 322);
+            this.btnIncarcaPoza.Name = "btnIncarcaPoza";
+            this.btnIncarcaPoza.Size = new System.Drawing.Size(170, 44);
+            this.btnIncarcaPoza.TabIndex = 17;
+            this.btnIncarcaPoza.Text = "Adauga poza";
+            this.btnIncarcaPoza.UseVisualStyleBackColor = true;
+            this.btnIncarcaPoza.Click += new System.EventHandler(this.btnIncarcaPoza_Click);
+            // 
             // AdaugareAngajat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.btnIncarcaPoza);
+            this.Controls.Add(this.picAngajat);
             this.Controls.Add(this.anulare);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -224,6 +248,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "AdaugareAngajat";
             this.Text = "AdaugareAngajat";
+            ((System.ComponentModel.ISupportInitialize)(this.picAngajat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +272,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button anulare;
+        private System.Windows.Forms.PictureBox picAngajat;
+        private System.Windows.Forms.Button btnIncarcaPoza;
     }
 }

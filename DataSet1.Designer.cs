@@ -657,6 +657,8 @@ namespace Proiect {
             
             private global::System.Data.DataColumn columnVIRAT_CARD;
             
+            private global::System.Data.DataColumn columnIMAGINE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ANGAJATIDataTable() {
@@ -804,6 +806,14 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IMAGINEColumn {
+                get {
+                    return this.columnIMAGINE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -839,7 +849,7 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ANGAJATIRow AddANGAJATIRow(string NUME, string PRENUME, string FUNCTIE, decimal SALAR_BAZA, decimal SPOR_PROC, decimal PREMII_BRUTE, decimal RETINERI, decimal TOTAL_BRUT, decimal CAS, decimal CASS, decimal BRUT_IMPOZABIL, decimal IMPOZIT, decimal VIRAT_CARD) {
+            public ANGAJATIRow AddANGAJATIRow(string NUME, string PRENUME, string FUNCTIE, decimal SALAR_BAZA, decimal SPOR_PROC, decimal PREMII_BRUTE, decimal RETINERI, decimal TOTAL_BRUT, decimal CAS, decimal CASS, decimal BRUT_IMPOZABIL, decimal IMPOZIT, decimal VIRAT_CARD, byte[] IMAGINE) {
                 ANGAJATIRow rowANGAJATIRow = ((ANGAJATIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -855,7 +865,8 @@ namespace Proiect {
                         CASS,
                         BRUT_IMPOZABIL,
                         IMPOZIT,
-                        VIRAT_CARD};
+                        VIRAT_CARD,
+                        IMAGINE};
                 rowANGAJATIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowANGAJATIRow);
                 return rowANGAJATIRow;
@@ -899,6 +910,7 @@ namespace Proiect {
                 this.columnBRUT_IMPOZABIL = base.Columns["BRUT_IMPOZABIL"];
                 this.columnIMPOZIT = base.Columns["IMPOZIT"];
                 this.columnVIRAT_CARD = base.Columns["VIRAT_CARD"];
+                this.columnIMAGINE = base.Columns["IMAGINE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -932,6 +944,8 @@ namespace Proiect {
                 base.Columns.Add(this.columnIMPOZIT);
                 this.columnVIRAT_CARD = new global::System.Data.DataColumn("VIRAT_CARD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVIRAT_CARD);
+                this.columnIMAGINE = new global::System.Data.DataColumn("IMAGINE", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIMAGINE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNRCRT}, true));
                 this.columnNRCRT.AutoIncrement = true;
@@ -1429,6 +1443,22 @@ namespace Proiect {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] IMAGINE {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableANGAJATI.IMAGINEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IMAGINE\' in table \'ANGAJATI\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableANGAJATI.IMAGINEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsFUNCTIENull() {
                 return this.IsNull(this.tableANGAJATI.FUNCTIEColumn);
             }
@@ -1545,6 +1575,18 @@ namespace Proiect {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetVIRAT_CARDNull() {
                 this[this.tableANGAJATI.VIRAT_CARDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIMAGINENull() {
+                return this.IsNull(this.tableANGAJATI.IMAGINEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIMAGINENull() {
+                this[this.tableANGAJATI.IMAGINEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2399,6 +2441,7 @@ namespace Proiect.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("BRUT_IMPOZABIL", "BRUT_IMPOZABIL");
             tableMapping.ColumnMappings.Add("IMPOZIT", "IMPOZIT");
             tableMapping.ColumnMappings.Add("VIRAT_CARD", "VIRAT_CARD");
+            tableMapping.ColumnMappings.Add("IMAGINE", "IMAGINE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2629,7 +2672,7 @@ namespace Proiect.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""ANGAJATI"" (""NUME"", ""PRENUME"", ""FUNCTIE"", ""SALAR_BAZA"", ""SPOR_PROC"", ""PREMII_BRUTE"", ""RETINERI"", ""TOTAL_BRUT"", ""CAS"", ""CASS"", ""BRUT_IMPOZABIL"", ""IMPOZIT"", ""VIRAT_CARD"") VALUES (:NUME, :PRENUME, :FUNCTIE, :SALAR_BAZA, :SPOR_PROC, :PREMII_BRUTE, :RETINERI, :TOTAL_BRUT, :CAS, :CASS, :BRUT_IMPOZABIL, :IMPOZIT, :VIRAT_CARD)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""ANGAJATI"" (""NUME"", ""PRENUME"", ""FUNCTIE"", ""SALAR_BAZA"", ""SPOR_PROC"", ""PREMII_BRUTE"", ""RETINERI"", ""TOTAL_BRUT"", ""CAS"", ""CASS"", ""BRUT_IMPOZABIL"", ""IMPOZIT"", ""VIRAT_CARD"", ""IMAGINE"") VALUES (:NUME, :PRENUME, :FUNCTIE, :SALAR_BAZA, :SPOR_PROC, :PREMII_BRUTE, :RETINERI, :TOTAL_BRUT, :CAS, :CASS, :BRUT_IMPOZABIL, :IMPOZIT, :VIRAT_CARD, :IMAGINE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "NUME";
@@ -2732,9 +2775,17 @@ namespace Proiect.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "VIRAT_CARD";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IMAGINE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Blob;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "IMAGINE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""ANGAJATI"" SET ""NUME"" = :NUME, ""PRENUME"" = :PRENUME, ""FUNCTIE"" = :FUNCTIE, ""SALAR_BAZA"" = :SALAR_BAZA, ""SPOR_PROC"" = :SPOR_PROC, ""PREMII_BRUTE"" = :PREMII_BRUTE, ""RETINERI"" = :RETINERI, ""TOTAL_BRUT"" = :TOTAL_BRUT, ""CAS"" = :CAS, ""CASS"" = :CASS, ""BRUT_IMPOZABIL"" = :BRUT_IMPOZABIL, ""IMPOZIT"" = :IMPOZIT, ""VIRAT_CARD"" = :VIRAT_CARD WHERE ((""NRCRT"" = :Original_NRCRT) AND (""NUME"" = :Original_NUME) AND (""PRENUME"" = :Original_PRENUME) AND ((:IsNull_FUNCTIE = 1 AND ""FUNCTIE"" IS NULL) OR (""FUNCTIE"" = :Original_FUNCTIE)) AND (""SALAR_BAZA"" = :Original_SALAR_BAZA) AND ((:IsNull_SPOR_PROC = 1 AND ""SPOR_PROC"" IS NULL) OR (""SPOR_PROC"" = :Original_SPOR_PROC)) AND ((:IsNull_PREMII_BRUTE = 1 AND ""PREMII_BRUTE"" IS NULL) OR (""PREMII_BRUTE"" = :Original_PREMII_BRUTE)) AND ((:IsNull_RETINERI = 1 AND ""RETINERI"" IS NULL) OR (""RETINERI"" = :Original_RETINERI)) AND ((:IsNull_TOTAL_BRUT = 1 AND ""TOTAL_BRUT"" IS NULL) OR (""TOTAL_BRUT"" = :Original_TOTAL_BRUT)) AND ((:IsNull_CAS = 1 AND ""CAS"" IS NULL) OR (""CAS"" = :Original_CAS)) AND ((:IsNull_CASS = 1 AND ""CASS"" IS NULL) OR (""CASS"" = :Original_CASS)) AND ((:IsNull_BRUT_IMPOZABIL = 1 AND ""BRUT_IMPOZABIL"" IS NULL) OR (""BRUT_IMPOZABIL"" = :Original_BRUT_IMPOZABIL)) AND ((:IsNull_IMPOZIT = 1 AND ""IMPOZIT"" IS NULL) OR (""IMPOZIT"" = :Original_IMPOZIT)) AND ((:IsNull_VIRAT_CARD = 1 AND ""VIRAT_CARD"" IS NULL) OR (""VIRAT_CARD"" = :Original_VIRAT_CARD)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""ANGAJATI"" SET ""NUME"" = :NUME, ""PRENUME"" = :PRENUME, ""FUNCTIE"" = :FUNCTIE, ""SALAR_BAZA"" = :SALAR_BAZA, ""SPOR_PROC"" = :SPOR_PROC, ""PREMII_BRUTE"" = :PREMII_BRUTE, ""RETINERI"" = :RETINERI, ""TOTAL_BRUT"" = :TOTAL_BRUT, ""CAS"" = :CAS, ""CASS"" = :CASS, ""BRUT_IMPOZABIL"" = :BRUT_IMPOZABIL, ""IMPOZIT"" = :IMPOZIT, ""VIRAT_CARD"" = :VIRAT_CARD, ""IMAGINE"" = :IMAGINE WHERE ((""NRCRT"" = :Original_NRCRT) AND (""NUME"" = :Original_NUME) AND (""PRENUME"" = :Original_PRENUME) AND ((:IsNull_FUNCTIE = 1 AND ""FUNCTIE"" IS NULL) OR (""FUNCTIE"" = :Original_FUNCTIE)) AND (""SALAR_BAZA"" = :Original_SALAR_BAZA) AND ((:IsNull_SPOR_PROC = 1 AND ""SPOR_PROC"" IS NULL) OR (""SPOR_PROC"" = :Original_SPOR_PROC)) AND ((:IsNull_PREMII_BRUTE = 1 AND ""PREMII_BRUTE"" IS NULL) OR (""PREMII_BRUTE"" = :Original_PREMII_BRUTE)) AND ((:IsNull_RETINERI = 1 AND ""RETINERI"" IS NULL) OR (""RETINERI"" = :Original_RETINERI)) AND ((:IsNull_TOTAL_BRUT = 1 AND ""TOTAL_BRUT"" IS NULL) OR (""TOTAL_BRUT"" = :Original_TOTAL_BRUT)) AND ((:IsNull_CAS = 1 AND ""CAS"" IS NULL) OR (""CAS"" = :Original_CAS)) AND ((:IsNull_CASS = 1 AND ""CASS"" IS NULL) OR (""CASS"" = :Original_CASS)) AND ((:IsNull_BRUT_IMPOZABIL = 1 AND ""BRUT_IMPOZABIL"" IS NULL) OR (""BRUT_IMPOZABIL"" = :Original_BRUT_IMPOZABIL)) AND ((:IsNull_IMPOZIT = 1 AND ""IMPOZIT"" IS NULL) OR (""IMPOZIT"" = :Original_IMPOZIT)) AND ((:IsNull_VIRAT_CARD = 1 AND ""VIRAT_CARD"" IS NULL) OR (""VIRAT_CARD"" = :Original_VIRAT_CARD)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "NUME";
@@ -2836,6 +2887,14 @@ namespace Proiect.DataSet1TableAdapters {
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "VIRAT_CARD";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IMAGINE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Blob;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "IMAGINE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_NRCRT";
@@ -3076,8 +3135,8 @@ namespace Proiect.DataSet1TableAdapters {
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NrCrt, Nume, Prenume, Functie, Salar_Baza, Spor_Proc, Premii_Brute, Retine" +
-                "ri,\r\n       Total_Brut, CAS, CASS, Brut_Impozabil, Impozit, Virat_Card\r\nFROM Ang" +
-                "ajati\r\n";
+                "ri,\r\n       Total_Brut, CAS, CASS, Brut_Impozabil, Impozit, Virat_Card, Imagine\r" +
+                "\nFROM Angajati\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3253,7 +3312,7 @@ namespace Proiect.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NUME, string PRENUME, string FUNCTIE, decimal SALAR_BAZA, global::System.Nullable<decimal> SPOR_PROC, global::System.Nullable<decimal> PREMII_BRUTE, global::System.Nullable<decimal> RETINERI, global::System.Nullable<decimal> TOTAL_BRUT, global::System.Nullable<decimal> CAS, global::System.Nullable<decimal> CASS, global::System.Nullable<decimal> BRUT_IMPOZABIL, global::System.Nullable<decimal> IMPOZIT, global::System.Nullable<decimal> VIRAT_CARD) {
+        public virtual int Insert(string NUME, string PRENUME, string FUNCTIE, decimal SALAR_BAZA, global::System.Nullable<decimal> SPOR_PROC, global::System.Nullable<decimal> PREMII_BRUTE, global::System.Nullable<decimal> RETINERI, global::System.Nullable<decimal> TOTAL_BRUT, global::System.Nullable<decimal> CAS, global::System.Nullable<decimal> CASS, global::System.Nullable<decimal> BRUT_IMPOZABIL, global::System.Nullable<decimal> IMPOZIT, global::System.Nullable<decimal> VIRAT_CARD, object IMAGINE) {
             if ((NUME == null)) {
                 throw new global::System.ArgumentNullException("NUME");
             }
@@ -3327,6 +3386,12 @@ namespace Proiect.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((IMAGINE == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((object)(IMAGINE));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3361,6 +3426,7 @@ namespace Proiect.DataSet1TableAdapters {
                     global::System.Nullable<decimal> BRUT_IMPOZABIL, 
                     global::System.Nullable<decimal> IMPOZIT, 
                     global::System.Nullable<decimal> VIRAT_CARD, 
+                    object IMAGINE, 
                     decimal Original_NRCRT, 
                     string Original_NUME, 
                     string Original_PRENUME, 
@@ -3448,99 +3514,105 @@ namespace Proiect.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_NRCRT));
+            if ((IMAGINE == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(IMAGINE));
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_NRCRT));
             if ((Original_NUME == null)) {
                 throw new global::System.ArgumentNullException("Original_NUME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_NUME));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_NUME));
             }
             if ((Original_PRENUME == null)) {
                 throw new global::System.ArgumentNullException("Original_PRENUME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PRENUME));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PRENUME));
             }
             if ((Original_FUNCTIE == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_FUNCTIE));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FUNCTIE));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_SALAR_BAZA));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_SALAR_BAZA));
             if ((Original_SPOR_PROC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_SPOR_PROC.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_SPOR_PROC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_PREMII_BRUTE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_PREMII_BRUTE.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_PREMII_BRUTE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_RETINERI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_RETINERI.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_RETINERI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_TOTAL_BRUT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(Original_TOTAL_BRUT.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_TOTAL_BRUT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_CAS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_CAS.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_CAS.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_CASS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_CASS.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_CASS.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             if ((Original_BRUT_IMPOZABIL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_BRUT_IMPOZABIL.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_BRUT_IMPOZABIL.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             if ((Original_IMPOZIT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((decimal)(Original_IMPOZIT.Value));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_IMPOZIT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             if ((Original_VIRAT_CARD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(Original_VIRAT_CARD.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_VIRAT_CARD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
